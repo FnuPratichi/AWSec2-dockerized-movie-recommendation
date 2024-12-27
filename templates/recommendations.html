@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendations</title>
+</head>
+<body>
+    <h1>Movie Recommendations</h1>
+
+    {% if recommendations %}
+        <ul>
+            {% for recommendation in recommendations %}
+                <li>
+                    <h3>{{ recommendation.title }} ({{ recommendation.year }})</h3>
+                    <p><strong>Genres:</strong> {{ recommendation.genres }}</p>
+                    <p><strong>Ratings:</strong> {{ recommendation.w_ratings }}</p>
+                    <p><strong>Director:</strong> {{ recommendation.director }}</p>
+                    <p><strong>Main Cast:</strong> {{ recommendation.cast }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No recommendations found for the given movie.</p>
+    {% endif %}
+    
+    <br>
+    <a href="/">Go back to the homepage</a>
+</body>
+</html>
